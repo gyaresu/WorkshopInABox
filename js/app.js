@@ -10,12 +10,41 @@ function init() {
 
 
 function showInfo(data) {
-  //thing = data // if you type `thing` in the console it's now a global variable so you can see the returned objects
+
+
   $.each(data, function (i, each) {
-    $('#comboBoxData').append('<li class="list-group-item">' + '<span class="list-group-item active"><h4 class="list-group-item-heading">' + each.Exercise + '</span></h4>' + '<span class="list-group-item list-group-item-info"><span class="lead">' + each.Description + '</span>' + '<span class="list-group-item"> <strong> Objective: </strong>' + each.Objective + '    '  + '<br /><strong>Format: </strong>' + each.Format  + '<br /><b>Slides: </b> ' + 
-      each.Slides + '<br />' + '<b>Length:</b> ' + each.Length + '<br />' + '<b>Stimulus:</b> ' + 
-      each.Stimulus + '<br />' + '<b>Subject1:</b> ' + each.Subject1 + '<br />' + '<b>Subject2:</b> ' + each.Subject2 + '<strong><br />Notes:</strong> ' + each.Notes + '<br /></span></li>')
+    $('#comboBoxData').append('<li class="list-group-item"><span class="list-group-item active"><h4 class="list-group-item-heading">' +
+       each.Exercise + '</span></h4>' +
+       '<span class="list-group-item list-group-item-info"><span class="lead">' + each.Description + '</span>'
+    +  '<span class="list-group-item bob">' +
+    //   '<span class="elems"><strong>Objective: </strong>' + each.Objective + '<br /></span>' +
+    //   '<span class="elems"><strong>Format: </strong>' + each.Format  + '<br /></span>' +
+    //   '<span class="elems"><strong>Slides: </strong> ' + each.Slides + '<br /></span>' +
+    //   '<span class="elems"><strong>Length:</strong> ' + each.Length + '<br /></span>' +
+    //   '<span class="elems"><strong>Stimulus:</strong> ' + each.Stimulus + '<br /></span>' +
+    //   '<span class="elems"><strong>Subject1:</strong> ' + each.Subject1 + '<br /></span>' +
+    //   '<span class="elems"><strong>Subject2:</strong> ' + each.Subject2 + '<br /><p>' +
+    //   '<span class="elems"><strong>Notes:</strong> ' + each.Notes + '<br /></span>' +
+      + '</span></li>'
+    )
+    console.log(each.Description)
+    for (var e in each) {
+      if (each[e] !== '') {
+        //console.log(e, each[e])
+        $('.bob').append(e + ' : ' + each[e])
+      }
+    }
   })
+
+
+
+  // $(".elems").each(function() {
+
+  //     if($.trim($(this).html()).length == 0) {
+  //        $(this).hide();
+  //     }
+
+  // });
 
   $('#comboBox').bind('keydown keypress keyup change', function() {
     var search = this.value.toLowerCase()
