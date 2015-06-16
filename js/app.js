@@ -13,25 +13,28 @@ function showInfo(data) {
 
 
   $.each(data, function (i, each) {
-    $('#comboBoxData').append('<li class="list-group-item"><span class="list-group-item active"><h4 class="list-group-item-heading">' +
-       each.Exercise + '</span></h4>' +
-       '<span class="list-group-item list-group-item-info"><span class="lead">' + each.Description + '</span>'
-    +  '<span class="list-group-item bob">' +
-    //   '<span class="elems"><strong>Objective: </strong>' + each.Objective + '<br /></span>' +
-    //   '<span class="elems"><strong>Format: </strong>' + each.Format  + '<br /></span>' +
-    //   '<span class="elems"><strong>Slides: </strong> ' + each.Slides + '<br /></span>' +
-    //   '<span class="elems"><strong>Length:</strong> ' + each.Length + '<br /></span>' +
-    //   '<span class="elems"><strong>Stimulus:</strong> ' + each.Stimulus + '<br /></span>' +
-    //   '<span class="elems"><strong>Subject1:</strong> ' + each.Subject1 + '<br /></span>' +
-    //   '<span class="elems"><strong>Subject2:</strong> ' + each.Subject2 + '<br /><p>' +
-    //   '<span class="elems"><strong>Notes:</strong> ' + each.Notes + '<br /></span>' +
-      + '</span></li>'
-    )
-    console.log(each.Description)
+    // $('#comboBoxData').append('<li class="list-group-item"><span class="list-group-item active"><h4 class="list-group-item-heading">' +
+    //    each.Exercise + '</span></h4>' +
+    //    '<span class="list-group-item list-group-item-info"><span class="lead">' + each.Description + '</span>'
+    // +  '<span class="list-group-item bob">' +
+    // //   '<span class="elems"><strong>Objective: </strong>' + each.Objective + '<br /></span>' +
+    // //   '<span class="elems"><strong>Format: </strong>' + each.Format  + '<br /></span>' +
+    // //   '<span class="elems"><strong>Slides: </strong> ' + each.Slides + '<br /></span>' +
+    // //   '<span class="elems"><strong>Length:</strong> ' + each.Length + '<br /></span>' +
+    // //   '<span class="elems"><strong>Stimulus:</strong> ' + each.Stimulus + '<br /></span>' +
+    // //   '<span class="elems"><strong>Subject1:</strong> ' + each.Subject1 + '<br /></span>' +
+    // //   '<span class="elems"><strong>Subject2:</strong> ' + each.Subject2 + '<br /><p>' +
+    // //   '<span class="elems"><strong>Notes:</strong> ' + each.Notes + '<br /></span>' +
+    //   + '</span></li>'
+    // )
+    console.log(each.Description, i)
     for (var e in each) {
       if (each[e] !== '') {
+        if (each[e] === 'Exercise') {
+          $('.lead').append(each[e])
+        }
         //console.log(e, each[e])
-        $('.bob').append(e + ' : ' + each[e])
+        $('.bob').append(e + ' : ' + each[e] + '<br />')
       }
     }
   })

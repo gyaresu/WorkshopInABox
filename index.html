@@ -46,14 +46,26 @@
 </nav>
 
 <div class="container">
-<br />
-<br /><br /><br /><br /><br />
+  <br />
+  <br /><br /><br /><br /><br />
 
 
-<div id="TypeMenu"></div>
+  <div id="TypeMenu"></div>
   <div id="ExerciseDescription"></div>
 
   <ul class="list-group" id="comboBoxData">
+    <li class="list-group-item">
+      <span class="list-group-item active"><h4 class="list-group-item-heading"></h4>
+        <span class="list-group-item list-group-item-info">
+          <span class="lead">
+            <span class="list-group-item bob">
+            </span>
+          </span>
+        </span>
+      </span>
+    </li>
+
+
 
   </ul>
 </div> <!-- container -->
@@ -94,20 +106,20 @@
     <script src="js/ie10-viewport-bug-workaround.js"></script>
 
 
-<script type="text/javascript">
- 	$(document).ready(function(){ init() });
-// 
-// Here's where the magic happens. Load the google spreadsheet magic link into a variable.
-  var public_spreadsheet_url ='https://docs.google.com/spreadsheets/d/153rVXCt4nlQn8Fj80GmWOLO5_aF4phW0MZrNIZfpUc8/pubhtml?gid=291196347&single=true'; 
+    <script type="text/javascript">
+      $(document).ready(function(){ init() });
+      // 
+      // Here's where the magic happens. Load the google spreadsheet magic link into a variable.
+      var public_spreadsheet_url ='https://docs.google.com/spreadsheets/d/153rVXCt4nlQn8Fj80GmWOLO5_aF4phW0MZrNIZfpUc8/pubhtml?gid=291196347&single=true'; 
 
-// Initialize the spreadsheet. This runs through each row of the spreadsheet and loads a set of data arrays
-  function init() {
-    Tabletop.init( { key: public_spreadsheet_url,
-                     callback: showInfo,
-                     simpleSheet: true } )
-  }
+      // Initialize the spreadsheet. This runs through each row of the spreadsheet and loads a set of data arrays
+      function init() {
+        Tabletop.init( { key: public_spreadsheet_url,
+         callback: showInfo,
+         simpleSheet: true } )
+      }
 
-// function showInfo(data) {
+      // function showInfo(data) {
 //   data comes through as a simple array since simpleSheet is turned on
 //   Doofy alert just tells us the code got this far: disable in final
 //   alert("Successfully processed " + data.length + " rows!")
@@ -120,18 +132,18 @@
 </body>
 </html>
 =======
-    <!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->
+<!-- <script src="js/ie10-viewport-bug-workaround.js"></script> -->
 <!--
-<script>
-function init() {
-  Tabletop.init( { key: '153rVXCt4nlQn8Fj80GmWOLO5_aF4phW0MZrNIZfpUc8',
-                   callback: function(data, tabletop) { console.log(data) },
-                   simpleSheet: true } )
-}
-</script>
+  <script>
+    function init() {
+      Tabletop.init( { key: '153rVXCt4nlQn8Fj80GmWOLO5_aF4phW0MZrNIZfpUc8',
+       callback: function(data, tabletop) { console.log(data) },
+       simpleSheet: true } )
+    }
+  </script>
 -->
 
 <script type="text/javascript" src='./js/app.js'></script>
-  </body>
-  </html>
+</body>
+</html>
 
